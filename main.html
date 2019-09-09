@@ -240,7 +240,7 @@
         }
         .button {
             width: 100%;
-            height: 30vh;
+            height: 20vh;
             background-color: #eeeeee;
             border-radius: 10px;
         }
@@ -288,7 +288,7 @@
                         <div class="contcontainer">
                             <div class="container">
                                 <div class="vForCont" v-for="item in urlList">
-                                    <a :href="item.url" class="button" :style="'background-color:'+item.color+'!important;'">
+                                    <a :href="item.url" class="button" :style="'background-color:'+item.color+'!important;'" target="_blank">
                                         <span :style="'color:'+item.fontColor">{{item.title}}</span>
                                     </a>
                                 </div>
@@ -313,7 +313,7 @@
             urlList: [
                 {
                     title: "哔哩哔哩",
-                    icon: "",
+                    icon: "https://infinitypro-img.infinitynewtab.com/custom-icon/8001d8v4011vrvtu77nzumzog5442n.png",
                     url: "https://space.bilibili.com/4325844/favlist",
                     color: "#df85a0",
                     fontColor: "#FFF"
@@ -327,30 +327,52 @@
                     url: "http://www-lib.lcu.edu.cn/"
                 }, {
                     title: "易班优课",
-                    icon: "",
+                    icon: "https://infinitypro-img.infinitynewtab.com/custom-icon/8001dc4de2o09hca6bndqfeulgj9hj.png",
                     url: "https://www.yooc.me/dashboard/mygroup"
                 }, {
                     title: "校园网登录",
-                    icon: "",
+                    icon: "https://infinitypro-img.infinitynewtab.com/custom-icon/8001db2qvba7c5sl2enp3k0eiu33ju.png",
                     url: "http://172.30.2.2:8088"
                 }, {
                     title: "批改网",
-                    icon: "",
+                    icon: "https://infinitypro-img.infinitynewtab.com/custom-icon/8001db2qj9qvlxl4hzus8s9ynqsy98.png",
                     url: "https://www.pigai.org/index.php?c=write&a=myclass",
                     color:"#29abe2",
                     fontColor:"white"
                 }, {
-                    title: "格创CTF",
+                    title: "格创CTF练习",
                     icon: "",
                     url: "http://210.44.118.204:4000",
                     color:"",
                     fontColor:"black"
                 }, {
-                    title: "格创CTF",
+                    title: "格创CTF论坛",
                     icon: "",
                     url: "http://210.44.118.204:4001",
                     color:"",
                     fontColor:"black"
+                }, {
+                    title: "freeCodeCamp",
+                    icon: "",
+                    url: "https://www.freecodecamp.one/",
+                    color: "",
+                    fontColor: "black"                
+                }, {
+                    title: "leetCodeCN",
+                    icon: "",
+                    url: "https://leetcode-cn.com/problemset/all/",
+                    color: "",
+                    fontColor: "black"
+                }, {
+                    title:"菜鸟教程",
+                    icon:"",
+                    url:"http://www.runoob.com/"
+                }, {
+                    title: "MDN",
+                    icon: "",
+                    url: "http://www.runoob.com/"
+                }
+
             ]
         },
         methods: {
