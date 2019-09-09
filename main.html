@@ -15,7 +15,7 @@
             /* backdrop-filter: blur(10px); */
             /* backdrop-filter: saturate(180%) blur(20px); */
             margin: 0;
-            font-family: "SF Pro Display", "苹方";
+            font-family: "SF Pro Display", "PingFang SC";
             /* height: 1000px; */
         }
 
@@ -151,23 +151,26 @@
         }
 
         #search_input {
-            width: 100%;
-            height: 40px;
-            padding: 0 5px;
+            width:80vh;
+            flex-grow: 8;
+            height: 45px;
+            padding: 0 10px;
             border: none;
             outline: 0;
+            color: white;
             font-size: 16px;
-            color: #4a4266;
             background-color: transparent;
+                font-weight: 400;
+                font-family: "SF Pro Display", "PingFang SC", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .search_part {
-            margin-top: 20px;
-            margin-bottom: 30px;
+            /* margin-top: 30px; */
+            /* margin-bottom: 30px; */
         }
 
         span {
-            display: block;
+            /* display: block; */
             overflow: hidden;
             padding-left: 2px;
             font-size: 12px;
@@ -177,27 +180,29 @@
         .search_bar {
             /* -webkit-animation: fadeIn 2.5s;
             animation: fadeIn 2.5s; */
-            display: table;
+            display: flex;
+            justify-content: space-between;
             /* width: 88%; */
             width: 600px;
             max-width: 1000px;
             height: 45px;
             margin: 0 auto;
             /* box-shadow: 0 0 5px 0 rgba(70, 70, 40, .4); */
-            border-radius: 105px;
+            border-radius: 18px;
             vertical-align: middle;
-            background-color: #eeeeee;
+            background-color: #ffffff4b;
         }
 
         #search_submit {
             float: right;
             height: 45px;
-            padding: 0 13px 0 13px;
+            padding: 0 15px 0 15px;
             border: none;
             outline: 0;
-            font-size: 18px;
-            font-weight: 500;
-            color: #4a4266;
+            font-size: 15px;
+            font-weight: 400;
+            font-family: "SF Pro Display", "PingFang SC", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
             background-color: transparent;
         }
 
@@ -245,6 +250,9 @@
             background-color: #eeeeee;
             border-radius: 10px;
             box-shadow: 0 10px 20px 2px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .button:hover {
             background-color: rgba(51, 51, 51, 0.384)!important;
@@ -263,12 +271,18 @@
             font-family: "SF Pro Display", "苹方";
             color: black;
             line-height: 20vh;
-            padding-left: 3vh;
             font-weight: 600;
+            margin-left: 3vh;
             font-size: 18px;
         }
         .button span:hover{
             color: white;
+        }
+        .icon {
+            width: 12vh;
+            height: 12vh;
+            border-radius: 18px;
+            margin-right: 3vh; 
         }
     </style>
 </head>
@@ -284,12 +298,12 @@
                             <form action="https://www.dogedoge.com/results" class="search_bar">
                                 <!-- <input name="from" type="hidden" value="1011440l">
                                     <input name="ie" type="hidden" value="utf-8"> -->
-                                <input type="submit" id="search_submit" value="↵">
-                                <span>
-                                    <!-- <input class="search" type="text" name="word" autocomplete="off" id="search_input" baiduSug="1"> -->
-                                    <input class="search" type="text" name="q" autocomplete="off" id="search_input"
+                                    <span>
+                                        <!-- <input class="search" type="text" name="word" autocomplete="off" id="search_input" baiduSug="1"> -->
+                                        <input class="search" type="text" name="q" autocomplete="off" id="search_input"
                                         baiduSug="1">
-                                </span>
+                                    </span>
+                                    <input type="submit" id="search_submit" value="搜索">
                             </form>
                         </div>
                     </div>
@@ -297,8 +311,9 @@
                         <div class="contcontainer">
                             <div class="container">
                                 <div class="vForCont" v-for="item in urlList">
-                                    <a :href="item.url" class="button" :style="'background-color:'+item.color+'!important;'" target="_blank">
+                                    <a :href="item.url" class="button" :style="'background-color:'+item.color+'!important;'" :target="item.target">
                                         <span :style="'color:'+item.fontColor">{{item.title}}</span>
+                                        <img :src="item.icon" alt="" class="icon">
                                     </a>
                                 </div>
                             </div>
@@ -322,64 +337,79 @@
             urlList: [
                 {
                     title: "哔哩哔哩",
-                    icon: "https://infinitypro-img.infinitynewtab.com/custom-icon/8001d8v4011vrvtu77nzumzog5442n.png",
+                    icon: "https://infinitypro-img.infinitynewtab.com/custom-icon/9001c91g3utjee9xucs5xfhgi0goag.png",
                     url: "https://space.bilibili.com/4325844/favlist",
-                    color: "#df85a0",
-                    fontColor: "#FFF"
+                    color: "#e76a8d",
+                    fontColor: "#FFF",
+                    target: "_blank"
                 }, {
                     title: "教务在线",
                     icon: "",
-                    url: "http://jwcweb.lcu.edu.cn/lzjw182/f?p=213"
+                    url: "http://jwcweb.lcu.edu.cn/lzjw182/f?p=213",
+                    target: "_blank"
                 }, {
                     title: "聊大图书馆",
                     icon: "",
-                    url: "http://www-lib.lcu.edu.cn/"
+                    url: "http://www-lib.lcu.edu.cn/",
+                    // target: "_blank"
                 }, {
                     title: "易班优课",
                     icon: "https://infinitypro-img.infinitynewtab.com/custom-icon/8001dc4de2o09hca6bndqfeulgj9hj.png",
-                    url: "https://www.yooc.me/dashboard/mygroup"
+                    url: "https://www.yooc.me/dashboard/mygroup",
+                    color: "#fff",
+                    // target: "_blank"
                 }, {
                     title: "校园网登录",
                     icon: "https://infinitypro-img.infinitynewtab.com/custom-icon/8001db2qvba7c5sl2enp3k0eiu33ju.png",
-                    url: "http://172.30.2.2:8088"
+                    url: "http://172.30.2.2:8088",
+                    color: "#f7931e",
+                    fontColor: "white",
+                    target: "_blank"
                 }, {
                     title: "批改网",
                     icon: "https://infinitypro-img.infinitynewtab.com/custom-icon/8001db2qj9qvlxl4hzus8s9ynqsy98.png",
                     url: "https://www.pigai.org/index.php?c=write&a=myclass",
                     color:"#29abe2",
-                    fontColor:"white"
+                    fontColor:"white",
+                    // target: "_blank"
                 }, {
                     title: "格创CTF练习",
                     icon: "",
                     url: "http://210.44.118.204:4000",
                     color:"",
-                    fontColor:"black"
+                    fontColor:"black",
+                    target: "_blank"
                 }, {
                     title: "格创CTF论坛",
                     icon: "",
                     url: "http://210.44.118.204:4001",
                     color:"",
-                    fontColor:"black"
+                    fontColor:"black",
+                    target: "_blank"
                 }, {
                     title: "freeCodeCamp",
-                    icon: "",
+                    icon: "https://infinityicon.infinitynewtab.com/user-share-icon/ee9b8aef5936e8de6a6c81e662451d5c.png",
                     url: "https://www.freecodecamp.one/",
-                    color: "",
-                    fontColor: "black"                
+                    color: "#006400",
+                    fontColor: "white",
+                    target: "_blank"             
                 }, {
                     title: "leetCodeCN",
-                    icon: "",
+                    icon: "https://infinitypro-img.infinitynewtab.com/custom-icon/8001cne561a689z16llit554eboe6m.png",
                     url: "https://leetcode-cn.com/problemset/all/",
-                    color: "",
-                    fontColor: "black"
+                    color: "white",
+                    target: "_blank"
                 }, {
                     title:"菜鸟教程",
                     icon:"",
-                    url:"http://www.runoob.com/"
+                    url:"http://www.runoob.com/",
+                    target: "_blank"
                 }, {
-                    title: "MDN",
-                    icon: "",
-                    url: "http://www.runoob.com/"
+                    title: "腾讯云工作台",
+                    icon: "https://infinitypro-img.infinitynewtab.com/custom-icon/9001c4gh0haeui1j9xv5vfgq2nucy5.png",
+                    url: "https://dev.tencent.com/user",
+                    color: "white",
+                    target: "_blank"
                 }
 
             ]
