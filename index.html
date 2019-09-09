@@ -161,8 +161,6 @@
                 <li id="o4" class="tab" @click="changeTab('unipus')">Unipus</li>
                 <li id="o5" class="tab" @click="changeTab('qmail')">QQ邮箱</li>
                 <li id="o5" class="tab" @click="changeTab('outlook')">Outlook</li>
-                <li id="o5" class="tab" @click="changeTab('toDo')">To-Do</li>
-                <li id="o5" class="tab" @click="changeTab('GCCTF')">GCCTF</li>
             </ul>
         </div>
         <div id="app">
@@ -277,7 +275,7 @@
                 </div>
             </div>
             <iframe src="main.html" frameborder="0" scrolling="auto"
-                v-show="currentTab == 'main'"></iframe>
+                v-show="currentTab == 'main'" style="backdrop-filter: saturate(180%) blur(20px);"></iframe>
             <!-- <div id="uplus" v-show="currentTab == 'uplus'"> -->
             <iframe src="http://210.44.118.251/si/student/group" frameborder="0" scrolling="auto"
                 v-show="currentTab == 'uplus'"></iframe>
@@ -292,8 +290,6 @@
             <!-- </div> -->
             <iframe src="https://w.mail.qq.com/" frameborder="0" v-show="currentTab == 'qmail'"></iframe>
             <iframe src="https://outlook.live.com/calendar/view/week" frameborder="0" v-if="currentTab == 'outlook'"></iframe>
-            <iframe src="https://to-do.microsoft.com/today" frameborder="0" v-if="currentTab == 'toDo'"></iframe>
-            <iframe src="210.44.118.204:4000" frameborder="0" v-if="currentTab == 'GCCTF'"></iframe>
         </div>
     </div>
 </body>
